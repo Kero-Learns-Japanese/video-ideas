@@ -1,0 +1,25 @@
+# Labels every idea from its form, so whoever posts one labels it by their own choices: GitHub lets only the repo's
+# own people add labels by hand. Reads the issue's text in JavaScript only, never in a shell, so nothing a post says
+# can run as a command.
+name: Label from the form
+on:
+  issues:
+    types: [opened, edited]
+permissions:
+  issues: write
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body || "";
+            const title = context.payload.issue.title || "";
+            const labels = [];
+            if (title.startsWith("Word:") || body.includes("### The word in English")) labels.push("word");
+            if (body.includes("Kero (or a friend) learning another language")) labels.push("language");
+            else if (title.startsWith("Video:") || body.includes("### What happens in it?")) labels.push("story");
+            if (labels.length > 0) {
+              await github.rest.issues.addLabels({ owner: context.repo.owner, repo: context.repo.repo, issue_number: context.payload.issue.number, labels });
+            }
