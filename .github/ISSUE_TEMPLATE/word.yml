@@ -1,0 +1,28 @@
+name: A word for Kero
+description: A word you want Kero to learn in a video.
+title: "Word: "
+labels: ["word"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping Kero learn!
+        **Everything here can be seen by anyone.** Never write your real name, age, school, where you live or a password.
+  - type: input
+    id: english
+    attributes:
+      label: The word in English
+      placeholder: watermelon
+    validations:
+      required: true
+  - type: input
+    id: japanese
+    attributes:
+      label: The Japanese, if you know it
+      placeholder: すいか (suika)
+  - type: textarea
+    id: why
+    attributes:
+      label: Anything else?
+      description: Does it sound like something funny in English? A scene where Kero could use it?
+      placeholder: Suika is also the name of the train card, so Kero could try to eat it.

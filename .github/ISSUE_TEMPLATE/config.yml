@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: An idea or a bug for KEROTOWN, the game
+    url: https://github.com/Kero-Learns-Japanese/issue-tracker/issues/new/choose
+    about: Game ideas and bug reports go in the KEROTOWN tracker.
+  - name: Kero's ideas page
+    url: https://kerolearnsjapanese.com/ideas/
+    about: See every idea on Kero's list and tap a heart to back one.

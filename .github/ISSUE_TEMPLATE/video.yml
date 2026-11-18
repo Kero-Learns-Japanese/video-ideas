@@ -1,0 +1,28 @@
+name: A video idea
+description: A story for a Short or an episode, or a language for Kero to try.
+title: "Video: "
+labels: ["story"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We love ideas!
+        **Everything here can be seen by anyone.** Never write your real name, age, school, where you live or a password.
+  - type: textarea
+    id: idea
+    attributes:
+      label: What happens in it?
+      placeholder: Kero and Goro fight over the last onigiri at a picnic.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of idea is it?
+      options:
+        - A Short
+        - An episode
+        - Kero (or a friend) learning another language
+        - Something else
+    validations:
+      required: true
